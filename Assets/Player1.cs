@@ -8,9 +8,10 @@ public class Player1 : MonoBehaviour {
 
 	public static int DiceNumber = 0;
 	public static int EndTurn = 0;
-	public float PlayerPositionId = 0;
-	public float Geld = 200;
+	public static int PlayerPositionId = 2;
+	public static int Geld = 200;
 	public static int test =5;
+	public static int PlayerHeeftStraat1 = 0;
 
 	
 
@@ -58,9 +59,13 @@ public class Player1 : MonoBehaviour {
 
 	public void ActionButton()
 	{
-		if(PlayerPositionId == 1)
+		if(PlayerPositionId == 2)
 		{
-			
+			if(PlayerHeeftStraat1 ==0){
+			Geld = Geld - 50;
+			StraatKostScript.Straat1Gekocht = 1; 
+			PlayerHeeftStraat1 = 1;
+			}
 		}
 	}
 
