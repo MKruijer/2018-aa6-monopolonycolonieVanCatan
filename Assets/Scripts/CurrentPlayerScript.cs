@@ -24,7 +24,7 @@ public class CurrentPlayerScript : MonoBehaviour {
 
     public void SwitchPlayer()
     {
-        BewegenScript.PlayerPositionRekenen = 0;
+        BewegenScript.PlayerPositionRekenen = -1;
         DiceRollScript.CanRollDice = 0;
         DiceKnopZichtbaarheid.enabled = true;
         DiceTekstZichtbaarheid.enabled = true;
