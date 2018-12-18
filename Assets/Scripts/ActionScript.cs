@@ -23,19 +23,19 @@ public class ActionScript : MonoBehaviour {
         //changing stuff
         if (BewegenScript.PlayerPositionRekenen == 0)
         {
-            Vakje1();
+            Vakje0();
         }
         if(BewegenScript.PlayerPositionRekenen == 1)
         {
-            Vakje2();
+            Vakje1();
         }
         if(BewegenScript.PlayerPositionRekenen == 2)
         {
-            Vakje3();
+            Vakje2();
         }
         if(BewegenScript.PlayerPositionRekenen == 3)
         {
-            Vakje4();
+            Vakje3();
         }
 
 
@@ -52,12 +52,12 @@ public class ActionScript : MonoBehaviour {
 
     }
 
-    public void Vakje1()
+    public void Vakje0()
     {
         playerGeld = playerGeld + 200;
     }
 
-    public void Vakje2()
+    public void Vakje1()
     {
         if (StraatKostScript.EigenaarStraat1 == 0)
         {
@@ -66,21 +66,17 @@ public class ActionScript : MonoBehaviour {
         }
     }
 
+    public void Vakje2()
+    {
+        playerGeld = playerGeld - 200;
+    }
+
     public void Vakje3()
     {
         if (StraatKostScript.EigenaarStraat2 == 0)
         {
             playerGeld = playerGeld - StraatKostScript.Straat2Kost;
             StraatKostScript.EigenaarStraat2 = CurrentPlayerScript.CurrentPlayer;
-        }
-    }
-
-    public void Vakje4()
-    {
-        if (StraatKostScript.EigenaarStraat3 == 0)
-        {
-            playerGeld = playerGeld - StraatKostScript.Straat3Kost;
-            StraatKostScript.EigenaarStraat3 = CurrentPlayerScript.CurrentPlayer;
         }
     }
 }

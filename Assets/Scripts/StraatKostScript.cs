@@ -12,19 +12,22 @@ public class StraatKostScript : MonoBehaviour {
     public static int EigenaarStraat1 = 0;
     public static int EigenaarStraat2 = 0;
     public static int EigenaarStraat3 = 0;
+    public static int TurnKostenStraat1 = 10;
+    public static int TurnKostenStraat2 = 25;
+    public static int TurnKostenStraat3 = 50;
 
     void Update () {
         if (BewegenScript.PlayerPositionRekenen == 1 && EigenaarStraat1 == 0)
         {
             StraatDisplay.text = "Deze straat kost: " + Straat1Kost + " om te kopen.";
         }
-        else if (BewegenScript.PlayerPositionRekenen == 2 && EigenaarStraat2 == 0)
+        else if (BewegenScript.PlayerPositionRekenen == 2)
         {
-		    StraatDisplay.text = "Deze straat kost: " + Straat2Kost + " om te kopen.";
+		    StraatDisplay.text = "Pay 200 for Gulag upkeep!";
         }
-        else if (BewegenScript.PlayerPositionRekenen == 3 && EigenaarStraat3 == 0)
+        else if (BewegenScript.PlayerPositionRekenen == 3 && EigenaarStraat2 == 0)
         {
-            StraatDisplay.text = "Deze straat kost: " + Straat3Kost + " om te kopen.";
+            StraatDisplay.text = "Deze straat kost: " + Straat2Kost + " om te kopen.";
         }
         else
         {
