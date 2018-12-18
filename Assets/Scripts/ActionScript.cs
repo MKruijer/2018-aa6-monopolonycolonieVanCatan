@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ActionScript : MonoBehaviour {
     public static int playerGeld = 0;
+    public Image ActionKnopZichtbaarheid;
+    public Text ActionTekstZichtbaarheid;
 
     public void ActionScriptUitvoeren()
     {
@@ -49,6 +51,8 @@ public class ActionScript : MonoBehaviour {
         {
             Player2Script.Player2Geld = playerGeld;
         }
+        ActionKnopZichtbaarheid.enabled = false;
+        ActionTekstZichtbaarheid.enabled = false;
 
     }
 
@@ -59,10 +63,15 @@ public class ActionScript : MonoBehaviour {
 
     public void Vakje1()
     {
-        if (StraatKostScript.EigenaarStraat1 == 0)
+        if (StraatKostScript.EigenaarStraat1 == 0 && playerGeld >= StraatKostScript.Straat1Kost)
         {
             playerGeld = playerGeld - StraatKostScript.Straat1Kost;
             StraatKostScript.EigenaarStraat1 = CurrentPlayerScript.CurrentPlayer;
+        }
+        else if (StraatKostScript.EigenaarStraat1 != 0 && StraatKostScript.EigenaarStraat1 != CurrentPlayerScript.CurrentPlayer)
+        {
+            playerGeld = playerGeld - StraatKostScript.TurnKostenStraat1;
+            
         }
     }
 
@@ -73,10 +82,14 @@ public class ActionScript : MonoBehaviour {
 
     public void Vakje3()
     {
-        if (StraatKostScript.EigenaarStraat2 == 0)
+        if (StraatKostScript.EigenaarStraat2 == 0 && playerGeld >= StraatKostScript.Straat2Kost)
         {
             playerGeld = playerGeld - StraatKostScript.Straat2Kost;
             StraatKostScript.EigenaarStraat2 = CurrentPlayerScript.CurrentPlayer;
+        }
+        else if (StraatKostScript.EigenaarStraat2 != 0 && StraatKostScript.EigenaarStraat2 != CurrentPlayerScript.CurrentPlayer)
+        {
+            playerGeld = playerGeld - StraatKostScript.TurnKostenStraat2;
         }
     }
 }

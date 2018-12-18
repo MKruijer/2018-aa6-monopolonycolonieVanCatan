@@ -14,6 +14,8 @@ public class CurrentPlayerScript : MonoBehaviour {
     public Text CurrentPlayerDisplay;
     public Image DiceKnopZichtbaarheid;
     public Text DiceTekstZichtbaarheid;
+    public Image ActionKnopZichtbaarheid;
+    public Text ActionTekstZichtbaarheid;
     public static string CurrentPlayerName = Player1;
 
 
@@ -28,6 +30,8 @@ public class CurrentPlayerScript : MonoBehaviour {
         DiceRollScript.CanRollDice = 0;
         DiceKnopZichtbaarheid.enabled = true;
         DiceTekstZichtbaarheid.enabled = true;
+        ActionKnopZichtbaarheid.enabled = true;
+        ActionTekstZichtbaarheid.enabled = true;
         if (CurrentPlayer == 1)
         {
             CurrentPlayer++;
