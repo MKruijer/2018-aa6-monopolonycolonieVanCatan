@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ActionScript : MonoBehaviour {
     public static int playerGeld = 0;
+    public Image ActionKnopZichtbaarheid;
+    public Text ActionTekstZichtbaarheid;
 
     public void ActionScriptUitvoeren()
     {
@@ -23,19 +25,19 @@ public class ActionScript : MonoBehaviour {
         //changing stuff
         if (BewegenScript.PlayerPositionRekenen == 0)
         {
-            Vakje1();
+            Vakje0();
         }
         if(BewegenScript.PlayerPositionRekenen == 1)
         {
-            Vakje2();
+            Vakje1();
         }
         if(BewegenScript.PlayerPositionRekenen == 2)
         {
-            Vakje3();
+            Vakje2();
         }
         if(BewegenScript.PlayerPositionRekenen == 3)
         {
-            Vakje4();
+            Vakje3();
         }
 
 
@@ -49,38 +51,45 @@ public class ActionScript : MonoBehaviour {
         {
             Player2Script.Player2Geld = playerGeld;
         }
+        ActionKnopZichtbaarheid.enabled = false;
+        ActionTekstZichtbaarheid.enabled = false;
 
     }
 
-    public void Vakje1()
+    public void Vakje0()
     {
         playerGeld = playerGeld + 200;
     }
 
-    public void Vakje2()
+    public void Vakje1()
     {
-        if (StraatKostScript.EigenaarStraat1 == 0)
+        if (StraatKostScript.EigenaarStraat1 == 0 && playerGeld >= StraatKostScript.Straat1Kost)
         {
             playerGeld = playerGeld - StraatKostScript.Straat1Kost;
             StraatKostScript.EigenaarStraat1 = CurrentPlayerScript.CurrentPlayer;
         }
+        else if (StraatKostScript.EigenaarStraat1 != 0 && StraatKostScript.EigenaarStraat1 != CurrentPlayerScript.CurrentPlayer)
+        {
+            playerGeld = playerGeld - StraatKostScript.TurnKostenStraat1;
+            
+        }
+    }
+
+    public void Vakje2()
+    {
+        playerGeld = playerGeld - 200;
     }
 
     public void Vakje3()
     {
-        if (StraatKostScript.EigenaarStraat2 == 0)
+        if (StraatKostScript.EigenaarStraat2 == 0 && playerGeld >= StraatKostScript.Straat2Kost)
         {
             playerGeld = playerGeld - StraatKostScript.Straat2Kost;
             StraatKostScript.EigenaarStraat2 = CurrentPlayerScript.CurrentPlayer;
         }
-    }
-
-    public void Vakje4()
-    {
-        if (StraatKostScript.EigenaarStraat3 == 0)
+        else if (StraatKostScript.EigenaarStraat2 != 0 && StraatKostScript.EigenaarStraat2 != CurrentPlayerScript.CurrentPlayer)
         {
-            playerGeld = playerGeld - StraatKostScript.Straat3Kost;
-            StraatKostScript.EigenaarStraat3 = CurrentPlayerScript.CurrentPlayer;
+            playerGeld = playerGeld - StraatKostScript.TurnKostenStraat2;
         }
     }
 }
