@@ -9,6 +9,7 @@ public class CurrentPlayerScript : MonoBehaviour {
     public static string Player2 = "Player2";
     public static string Player3 = "Player3";
     public static string Player4 = "Player4";
+    public static string Winner = "";
     public static int CurrentPlayer = 1;
     public static int MaxPlayers = 2;
     public Text CurrentPlayerDisplay;
@@ -17,11 +18,47 @@ public class CurrentPlayerScript : MonoBehaviour {
     public Image ActionKnopZichtbaarheid;
     public Text ActionTekstZichtbaarheid;
     public static string CurrentPlayerName = Player1;
+    public bool GameOver = false;
+    public Text DiceRollNumberDisplay;
+    public Image ExitKnop;
+    public Text ExitText;
 
 
     void Update()
     {
+        if(GameOver == false)
+        {
+            ExitKnop.enabled = false;
+            ExitText.enabled = false;
+        }
         CurrentPlayerDisplay.text = CurrentPlayerName+" is now!";
+        if(Player1Script.Player1Geld < 0)
+        {
+            GameOver = true;
+            Winner = Player2;
+
+        }
+        if (Player2Script.Player2Geld < 0)
+        {
+            GameOver = true;
+            Winner = Player1;
+        }
+
+        if(GameOver == true)
+        {
+
+            Destroy(GameObject.Find("Canvas/SwitchPlayerButton"));
+            Destroy(GameObject.Find("Canvas/RollDice"));
+            Destroy(GameObject.Find("Canvas/Move Button"));
+            Destroy(GameObject.Find("Canvas/CurrentPlayerText"));
+            Destroy(GameObject.Find("Canvas/ActionButton"));
+            Destroy(GameObject.Find("Canvas/MoneyDisplay"));
+            Destroy(GameObject.Find("Canvas/Straatkosten"));
+
+            DiceRollNumberDisplay.text = Winner+" has won! Press esc to quit.";
+            ExitKnop.enabled = true;
+            ExitText.enabled = true;
+        }
     }
 
     public void SwitchPlayer()
