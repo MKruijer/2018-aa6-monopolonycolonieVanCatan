@@ -7,8 +7,9 @@ public class Player2Script : MonoBehaviour
 
     public void Update()
     {
-        if (Player2PositionId > 40)
+        if (Player2PositionId >= 40)
         {
+            Player2Geld = Player2Geld + 200;
             Player2PositionId = Player2PositionId - 40;
         }
     }
