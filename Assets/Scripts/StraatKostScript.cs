@@ -92,6 +92,7 @@ public class StraatKostScript : MonoBehaviour {
 	public static int TurnKostenStraat28 = 50;
 
     void Update () {
+
 		if (BewegenScript.PlayerPositionRekenen == 0)
         {
 		    StraatDisplay.text = "Have 200 Roebels!";
