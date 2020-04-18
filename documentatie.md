@@ -4,13 +4,13 @@
 <p1>  
   <BR>
 <ul>
-<li>productOwner           = Daniël Scheepstra</li>
-<li>documentatieSchrijver  = Daniël Scheepstra </li>
+<li>productOwner           = Simon Holman</li>
+<li>documentatieSchrijver  = Gino Bokhorst </li>
 <li>backend                = Martijn Kruijer </li>
-<li>frontend               = Daniël Scheepstra </li>
+<li>frontend               = Obe Kaldeway </li>
 <li>architectuur           = Daniël Scheepstra </li>
-<li>assistent1             = Daniël Scheepstra </li>
-<li>assistent2             = Daniël Scheepstra </li>
+<li>assistent1             = Thomas Doornkamp </li>
+<li>assistent2             = Gerald Wolff </li>
 </ul>
 
 <B>Korte samenvatting van hoe het project in elkaar zit:
